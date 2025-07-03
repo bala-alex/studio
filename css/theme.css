@@ -12724,6 +12724,7 @@ img {
 .navbar {
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .navbar.scrolled {
