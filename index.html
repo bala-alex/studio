@@ -16,12 +16,12 @@
   <link rel="stylesheet" href="css/theme-dist.css">
 </head>
 
-<body class="bg-black text-white mt-0" data-bs-spy="scroll" data-bs-target="#navScroll">
+<body class="bg-black text-white mt-0 overflow-x-hidden" data-bs-spy="scroll" data-bs-target="#navScroll">
 
   <nav id="navScroll" class="navbar navbar-dark bg-black fixed-top px-vw-5" tabindex="0">
-    <div class="container">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
       <a class="navbar-brand pe-md-4 fs-4 col-12 col-md-auto text-center" href="#home">
-        <span class="ms-md-1 mt-1 fw-bolder me-md-5 link-fancy link-fancy-light">axbStudio</span>
+        <span class="ms-md-1 mt-1 fw-bolder link-fancy link-fancy-light">axbStudio</span>
       </a>
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
@@ -38,7 +38,7 @@
 
       </ul>
       <a href="mailto:alexandru.balasiu@gmail.com" aria-label="Download this template"
-        class="btn btn-outline-light px-5">
+        class="btn btn-outline-light px-5 mx-auto mx-sm-0">
         <small>Email Us</small>
       </a>
     </div>
@@ -122,7 +122,7 @@
             <img src="img/webp/person10.webp" alt="Our Team" class="img-fluid rounded-5 shadow">
           </div>
           <div class="col-12 col-lg-6 text-center text-lg-start" data-aos="fade-left">
-            <h2 class="display-4 mt-3">About Us</h2>
+            <h2 class="display-4 mt-sm-0 mt-5">About Us</h2>
             <p class="text-secondary">We are a team of passionate designers and developers dedicated to helping
               businesses succeed online. With years of experience, we deliver websites that make an impact and drive
               growth.</p>
@@ -143,7 +143,7 @@
             <a href="mailto:alexandru.balasiu@gmail.com" class="btn btn-xl btn-light mt-3">Email Us</a>
           </div>
           <div class="col-12 col-lg-6" data-aos="fade-left">
-            <img src="img/webp/abstract17.webp" alt="Contact Us" class="img-fluid rounded-5 shadow mt-3">
+            <img src="img/webp/abstract17.webp" alt="Contact Us" class="img-fluid rounded-5 shadow mt-sm-0 mt-5">
           </div>
         </div>
       </div>
@@ -168,6 +168,23 @@
     AOS.init({
       duration: 800, // values from 0 to 3000, with step 50ms
     });
+  </script>
+  <script>
+    let scrollpos = window.scrollY
+    const header = document.querySelector(".navbar")
+    const header_height = header.offsetHeight
+
+    const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+    const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll() }
+      else { remove_class_on_scroll() }
+
+      console.log(scrollpos)
+    })
   </script>
 </body>
 
