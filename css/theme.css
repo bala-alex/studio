@@ -14134,3 +14134,25 @@ img {
     transform: perspective(2500px) rotateX(0);
   }
 }
+
+.about-image {
+  max-width: 400px;
+}
+
+.contact-spacing {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-image {
+    max-width: 70%;
+  }
+
+  .gradient {
+    min-height: 100px;
+  }
+
+  .contact-spacing {
+    margin-top: 150px;
+  }
+}
