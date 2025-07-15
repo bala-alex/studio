@@ -14139,13 +14139,21 @@ img {
   max-width: 400px;
 }
 
+.max-w-250 {
+  max-width: 250px;
+}
+
 .contact-spacing {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 @media screen and (max-width: 767px) {
   .about-image {
     max-width: 70%;
+  }
+
+  .p-sm-none {
+    padding: 0 !important;
   }
 
   .gradient {
