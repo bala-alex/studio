@@ -61,7 +61,7 @@
                         app you need. The more details, the better — and if you have examples you like, feel free to
                         share them. We’ll get back to you with a tailored quote and a plan to bring your vision to life.
                     </p>
-                    <form class="row" action="https://formspree.io/f/xkgznqpr" method="POST">
+                    <form class="row" id="contactForm">
                         <div class="col-12 mb-3">
                             <label for="fullName" class="form-label">Full Name</label>
                             <input type="text" class="form-control form-control-lg bg-gray-200 border-dark" name="name"
@@ -78,10 +78,8 @@
                                 id="message" rows="5" placeholder="Tell us about your project or inquiry"
                                 required></textarea>
                         </div>
-                        <div class="col-12">
-                            <input type="hidden" name="_redirect" value="https://axbstudio.ro/thank-you.html">
-                            <button type="submit" class="btn btn-white btn-xl w-100 mt-5">Send Message</button>
-                        </div>
+                        <input type="hidden" name="_redirect" value="https://axbstudio.ro/thank-you.html">
+                        <button type="submit" class="btn btn-white btn-xl w-100 mt-5">Send Message</button>
                     </form>
                 </main>
             </div>
@@ -114,6 +112,29 @@
             }
 
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+        });
+    </script>
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const data = new FormData(form);
+            fetch("https://formspree.io/f/xkgznqpr", {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = "https://axbstudio.ro/thank-you.html";
+                } else {
+                    alert("There was a problem submitting your form.");
+                }
+            }).catch(error => {
+                alert("Oops! Something went wrong.");
+            });
         });
     </script>
 </body>
