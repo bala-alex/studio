@@ -14149,11 +14149,15 @@ img {
 
 @media screen and (max-width: 767px) {
   .about-image {
-    max-width: 70%;
+    max-width: 90%;
   }
 
   .p-sm-none {
     padding: 0 !important;
+  }
+
+  .mobile-none {
+    display: none;
   }
 
   .gradient {
